@@ -24,3 +24,5 @@ COPY . /ws
 
 RUN mkdir -p /asset/ && \
     make OUTPUT=/asset/bootstrap
+
+ENTRYPOINT [ "/asset/bootstrap" ]
