@@ -14,11 +14,11 @@ GIT_COMMIT_HASH=$(git rev-parse --short HEAD)
 # push to registry
 # --provenance=true necessary to avoid error: https://stackoverflow.com/a/75149347/4820648
 docker buildx build \
-    --provenance=false \
-    --file lambda/Dockerfile \
-    --tag $ECR_REPO_URI:latest \
-    --tag $ECR_REPO_URI:$GIT_COMMIT_HASH \
-    --platform linux/amd64 \
-    --progress=plain \
-    --push \
-    lambda/.
+--provenance=false \
+--file lambda/Dockerfile \
+--tag $ECR_REPO_URI:latest \
+--tag $ECR_REPO_URI:$GIT_COMMIT_HASH \
+--platform linux/amd64 \
+--progress=plain \
+--push \
+lambda/.
